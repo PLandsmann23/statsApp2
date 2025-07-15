@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moje týmy</title>
+    <link rel="stylesheet" th:href="@{/css/default.css}">
+    <link rel="stylesheet" th:href="@{/css/teams/style.css}">
+    <link rel="stylesheet" th:href="@{/css/modal.css}">
+</head>
+<body>
+<div class="menu" th:replace="~{fragments/menu.html:: menu('teams')}"></div>
+
+<div class="main">
+    <div class="header" th:replace="~{fragments/menu.html:: header}">
+
+    </div>
+        <div id="content">
+            <div class="box position-relative my-teams">
+                <div class="my-teams-header"><h2>Moje týmy</h2><button onclick="openModal('create-team')">Přidat tým</button></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Název týmu</th>
+                            <th>Počet hráčů</th>
+                            <th>Počet zápasů</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div class="skeleton-overlay" data-skeleton="true"></div>
+            </div>
+        </div>
+    </div>
+
+<div th:replace="~{fragments/message.html:: message-box}"></div>
+<div th:replace="~{fragments/modals.html:: create-team}"></div>
+<div th:replace="~{fragments/modals.html:: edit-team}"></div>
+<div th:replace="~{fragments/dialogs.html:: delete-team}"></div>
+</body>
+
+<script th:src="@{/js/const.js}"></script>
+<script th:src="@{/js/util.js}"></script>
+<script th:src="@{/js/module/modal.js}"></script>
+<script th:src="@{/js/module/message.js}"></script>
+<script th:src="@{/js/module/dialog.js}"></script>
+<script th:src="@{/js/teams/load.js}"></script>
+<script th:src="@{/js/teams/script.js}"></script>
+<script th:src="@{/js/api/team.js}"></script>
+
+</html>

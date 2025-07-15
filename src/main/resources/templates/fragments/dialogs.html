@@ -1,0 +1,35 @@
+<div class="dialog-box" th:fragment="delete-team" id="delete-team">
+    <div class="dialog-box-content">
+        <h4>Opravdu chcete smazat tým?</h4>
+        <input type="hidden" name="delete-team-id" >
+        <div class="dialog-box-buttons"><button class="agree" onclick="deleteTeam()">Ano</button><button onclick="closeDialog(null, 'delete-team')" class="cancel">Ne</button></div>
+    </div>
+</div>
+<div class="dialog-box" th:fragment="delete-player" id="delete-player">
+    <div class="dialog-box-content">
+        <h4>Opravdu chcete smazat hráče?</h4>
+        <input type="hidden" name="delete-player-id" >
+        <div class="dialog-box-buttons"><button class="agree" onclick="deletePlayer()">Ano</button><button onclick="closeDialog(null, 'delete-player')" class="cancel">Ne</button></div>
+    </div>
+</div>
+<div class="dialog-box" th:fragment="delete-game" id="delete-game">
+    <div class="dialog-box-content">
+        <h4>Opravdu chcete smazat zápas?</h4>
+        <input type="hidden" name="delete-game-id" >
+        <div class="dialog-box-buttons"><button class="agree" onclick="deleteGame()">Ano</button><button onclick="closeDialog(null, 'delete-game')" class="cancel">Ne</button></div>
+    </div>
+</div>
+<div class="dialog-box" th:fragment="delete-roster" id="delete-roster">
+    <div class="dialog-box-content">
+        <h4>Opravdu chcete odebrat hráče ze soupisky?</h4>
+        <input type="hidden" name="delete-roster-id" >
+        <div class="dialog-box-buttons"><button class="agree" onclick="deleteRoster()">Ano</button><button onclick="closeDialog(null, 'delete-roster')" class="cancel">Ne</button></div>
+    </div>
+</div>
+<div class="dialog-box" th:fragment="delete-event" id="delete-event">
+    <div class="dialog-box-content">
+        <h4>Opravdu chcete odebrat událost?</h4>
+        <input type="hidden" name="delete-event-id" >
+        <div class="dialog-box-buttons"><button class="agree" onclick="deleteEvent()">Ano</button><button onclick="closeDialog(null, 'delete-event');" class="cancel">Ne</button></div>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title id="team-name-title">Tým 1</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+<!--    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">-->
+    <link rel="stylesheet" th:href="@{/css/default.css}">
+    <link rel="stylesheet" th:href="@{/css/teams/detail/style.css}">
+    <link rel="stylesheet" th:href="@{/css/modal.css}">
+</head>
+<body>
+<div class="menu" th:replace="~{fragments/menu.html:: menu('teams')}"></div>
+
+<div class="main">
+    <div class="header" th:replace="~{fragments/menu.html:: header}">
+
+    </div>
+    <div id="content">
+        <div class="box position-relative team-header">
+            <a href="/teams" class="back-button"><img src="/svg/back.svg"></a>
+            <h2 id="team-name"></h2>
+            <div class="skeleton-overlay" data-skeleton="true"></div>
+        </div>
+
+        <div id="tabs" class="container">
+            <ul>
+                <li><a href="#games">Zápasy</a></li>
+                <li><a href="#players">Hráči</a></li>
+            </ul>
+
+            <div class="box tab-content" id="games">
+                <div class="games-header">
+                    <h2>Zápasy</h2>
+                    <button onclick="openGameCreate()">Nový zápas</button>
+                </div>
+
+                <div class="games-filter" style="display: none">
+                    <label for="range">Období: </label><select id="range"></select>
+                    <label for="date-from">Datum od: </label><input type="date" id="date-from">
+                    <label for="date-to">Datum do: </label><input type="date" id="date-to">
+                    <button>Filtrovat</button>
+                </div>
+
+                <table  class="position-relative">
+                    <thead>
+                    <tr>
+                        <th>Soupeř</th>
+                        <th>Datum</th>
+                        <th>Čas</th>
+                        <th>Stadion</th>
+                        <th>Skóre</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <div class="skeleton-overlay" data-skeleton="true"></div>
+                </table>
+            </div>
+
+            <div class="box tab-content" id="players">
+                <div class="players-header">
+                    <h2>Hráči</h2>
+                    <button onclick="openModal('create-player')">Přidat hráče</button>
+                </div>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Číslo</th>
+                        <th>Jméno</th>
+                        <th>Pozice</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <div th:replace="~{fragments/message.html:: message-box}"></div>
+    <div th:replace="~{fragments/dialogs.html:: delete-player}"></div>
+    <div th:replace="~{fragments/dialogs.html:: delete-game}"></div>
+    <div th:replace="~{fragments/modals.html:: create-game}"></div>
+    <div th:replace="~{fragments/modals.html:: create-player}"></div>
+    <div th:replace="~{fragments/modals.html:: edit-game}"></div>
+    <div th:replace="~{fragments/modals.html:: edit-player}"></div>
+
+</body>
+
+<script src="/old/js/teams/tabs.js"></script>
+<script th:src="@{/js/const.js}"></script>
+<script th:src="@{/js/util.js}"></script>
+<script th:src="@{/js/module/modal.js}"></script>
+<script th:src="@{/js/module/message.js}"></script>
+<script th:src="@{/js/module/dialog.js}"></script>
+<script th:src="@{/js/teams/tabs.js}"></script>
+<script th:src="@{/js/teams/detail/load.js}"></script>
+<script th:src="@{/js/teams/detail/script.js}"></script>
+<script th:src="@{/js/api/game.js}"></script>
+<script th:src="@{/js/api/player.js}"></script>
+
+</html>

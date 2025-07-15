@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Úvodní stránka</title>
+    <link rel="stylesheet" th:href="@{/css/default.css}">
+    <link rel="stylesheet" th:href="@{/css/modal.css}">
+    <link rel="stylesheet" th:href="@{/css/index/style.css}">
+</head>
+<body>
+    <div class="menu" th:replace="~{fragments/menu.html:: menu('home')}"></div>
+    <div class="main">
+        <div class="header" th:replace="~{fragments/menu.html:: header}">
+
+        </div>
+        <div id="content">
+            <div class="box position-relative" id="next-games">
+                <h2>Příští zápasy</h2>
+                <table>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div class="skeleton-overlay" data-skeleton="true"></div>
+            </div>
+            <div class="box position-relative" id="my-teams">
+                <h2>Moje týmy</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Název týmu</th>
+                        <th>Počet hráčů</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div class="skeleton-overlay" data-skeleton="true"></div>
+            </div>
+            <div class="box position-relative" id="summary"><h2>Přehled</h2>
+                <div class="sum-container">
+                    <div class="sum-item">
+                        <table>
+                            <tr>
+                                <td><img src="/old/svg/team.svg"></td>
+                            </tr>
+                            <tr>
+                                <td class="sum-name">Počet týmů</td>
+                            </tr>
+                            <tr>
+                                <td class="sum-count" id="teams-count"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="sum-item">
+                        <table>
+                            <tr>
+                                <td><img src="/old/svg/person.svg"></td>
+                            </tr>
+                            <tr>
+                                <td class="sum-name">Počet hráčů</td>
+                            </tr>
+                            <tr>
+                                <td class="sum-count" id="players-count"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="sum-item">
+                        <table>
+                            <tr>
+                                <td><img src="/old/svg/match.svg"></td>
+                            </tr>
+                            <tr>
+                                <td class="sum-name">Počet zápasů</td>
+                            </tr>
+                            <tr>
+                                <td class="sum-count" id="games-count"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="skeleton-overlay" data-skeleton="true"></div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="~{fragments/message.html:: message-box}"></div>
+    <div th:replace="~{fragments/modals.html:: edit-team}"></div>
+    <div th:replace="~{fragments/dialogs.html:: delete-team}"></div>
+</body>
+<script th:src="@{/js/const.js}"></script>
+<script th:src="@{/js/util.js}"></script>
+<script th:src="@{/js/module/modal.js}"></script>
+<script th:src="@{/js/module/message.js}"></script>
+<script th:src="@{/js/module/dialog.js}"></script>
+<script th:src="@{/js/index/script.js}"></script>
+<script th:src="@{/js/index/load.js}"></script>
+<script th:src="@{/js/api/team.js}"></script>
+
+<script>
+    let periods = [[${periods}]];
+    let periodLength = [[${periodLength}]]
+
+    saveToSessionStorage("userSettings", {
+        periods: periods,
+        periodLength: periodLength
+    });
+</script>
+
+
+</html>

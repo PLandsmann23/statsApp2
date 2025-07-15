@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title th:text="'Zápas '+${id}+' - soupiska'"></title>
+    <link rel="stylesheet" th:href="@{/css/default.css}">
+    <link rel="stylesheet" th:href="@{/css/games/roster/style.css}">
+    <link rel="stylesheet" th:href="@{/css/modal.css}">
+</head>
+<body>
+<div class="menu" th:replace="~{fragments/menu.html:: menu('teams')}"></div>
+
+<div class="main">
+    <div class="header" th:replace="~{fragments/menu.html:: header}">
+
+    </div>
+    <div id="content">
+        <div class="box position-relative header-game" >
+
+            <div class="games-header">
+                <a th:href="'/teams/'+${teamId}" class="back-button"><img src="/svg/back.svg"></a>
+                <h2 id="game-info"></h2>
+                <div class="buttons">
+                    <button th:onclick="'openGameEdit('+${id}+')'"><img src="/svg/pencil.svg"></button>
+                    <a th:href="'/games/'+${id}+'/record'"><img src="/svg/begin.svg"></a>
+                </div>
+            </div>
+            <div class="skeleton-overlay" data-skeleton="true"></div>
+        </div>
+        <div class="box position-relative roster-grid">
+            <div id="not-in-roster">
+                <h3>Dostupní hráči</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Číslo</th>
+                            <th>Jméno</th>
+                            <th>Pozice</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="roster">
+                <h3>Soupiska pro zápas</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Číslo</th>
+                            <th>Jméno</th>
+                            <th>Pozice</th>
+                            <th>Formace</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="skeleton-overlay" data-skeleton="true"></div>
+
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/modals.html:: edit-game}"></div>
+<div th:replace="~{fragments/modals.html:: number-conflict}"></div>
+<div th:replace="~{fragments/message.html:: message-box}"></div>
+<div th:replace="~{fragments/dialogs.html:: delete-roster}"></div>
+</body>
+
+
+<script th:src="@{/js/const.js}"></script>
+<script th:src="@{/js/util.js}"></script>
+<script th:src="@{/js/module/modal.js}"></script>
+<script th:src="@{/js/module/message.js}"></script>
+<script th:src="@{/js/module/dialog.js}"></script>
+<script th:src="@{/js/games/roster/load.js}"></script>
+<script th:src="@{/js/games/roster/script.js}"></script>
+<script th:src="@{/js/api/game.js}"></script>
+<script th:src="@{/js/api/roster.js}"></script>
+
+
+</html>

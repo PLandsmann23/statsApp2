@@ -1,0 +1,391 @@
+/* === Hlavní styl pro záložky (nahrazuje .tab a .tab.active) === */
+.ui-tabs-nav {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    gap: 0.5rem;
+}
+
+.ui-tabs-nav li {
+    list-style: none;
+    margin: 0;
+}
+
+.ui-tabs-nav li a {
+    display: inline-block;
+    padding: 1rem 1.5rem 4rem 1.5rem;
+    font-size: 1.5rem;
+    background-color: var(--violet);
+    color: var(--white);
+    border: none;
+    border-radius: 1rem 1rem 0 0;
+    text-decoration: none;
+    /*transition: all 0.2s ease-in-out;*/
+}
+
+.ui-tabs-nav li.ui-tabs-active a {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Aktivní obsah záložky */
+.ui-tabs-panel {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 4rem;
+    width: 96%;
+    height: 100%;
+}
+
+/* ==== Zachování ostatních původních stylů ==== */
+
+h2 {
+    margin: 0;
+}
+
+#content {
+    height: 95%;
+}
+
+.container {
+    margin-top: 1rem;
+    position: relative;
+    height: 70%;
+}
+
+tbody {
+    overflow-y: auto;
+}
+
+#players tbody,
+#games tbody {
+    display: block;
+    width: 100%;
+    max-height: 450px;
+}
+
+#games tbody {
+    max-height: 400px;
+}
+
+#players thead, #players tbody tr,
+#games thead, #games tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#players table tr td:nth-child(1),
+#players table tr td:nth-child(3),
+#players table tr th:nth-child(1),
+#players table tr th:nth-child(3) {
+    text-align: center;
+    width: 10%;
+}
+
+#games table tr td:nth-child(1),
+#games table tr th:nth-child(1) {
+    width: 20%;
+}
+
+#games table tr td:nth-child(6),
+#games table tr th:nth-child(6) {
+    width: 8%;
+}
+
+#players table tr th:nth-child(2) {
+    text-align: left;
+}
+
+#players table tr td:nth-child(4),
+#players table tr th:nth-child(4) {
+    width: 15%;
+}
+
+#players td,
+#games td {
+    font-size: 1.2rem;
+    line-height: 3.2rem;
+}
+
+#players tbody img,
+#games tbody img {
+    height: 1.5rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+#players tr img:nth-child(1):hover,
+#games tr img:nth-child(1):hover {
+    filter: var(--filtered-violet);
+}
+
+#players tr img:nth-child(2):hover,
+#games tr img:nth-child(2):hover {
+    filter: var(--filtered-red);
+}
+
+.players-header,
+.games-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.games-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--lgrey);
+    width: 98%;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+}
+
+.games-filter input,
+.games-filter select {
+    font-family: "Poppins", sans-serif;
+    width: 15%;
+    border-radius: 0.5rem;
+    border: 1px solid var(--mgrey);
+}
+
+#players button,
+#games button {
+    background-color: var(--violet);
+    color: var(--white);
+    border: none;
+    width: 13rem;
+    font-size: 1rem;
+    height: 2rem;
+    text-align: center;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+}
+
+.team-header h2{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-header a,
+#games tbody a {
+    padding: 0.3rem 2.2rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--violet);
+    margin-left: auto;
+}
+
+#games tbody {
+    text-align: center;
+}
+
+#games .games-filter button {
+    width: 10rem;
+}
+
+#games tbody a {
+    display: block;
+    line-height: 1.2rem;
+}
+
+
+a.back-button {
+    display: flex;
+    background-color: var(--violet);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 1rem;
+    padding: 0.2rem 0.5rem;
+    border: none;
+    font-size: 1rem;
+    width: min-content;
+    height: min-content;
+    margin-left: 0;
+
+}
+
+.back-button img {
+    width: 2.75rem;
+    filter: var(--filtered-white);
+}
+
+/* === RESPONSIVE === */
+
+@media only screen and (max-width: 1439px) {
+    .container {
+        position: absolute;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        width: 87.5%;
+    }
+
+    .team-header {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #games tbody,
+    #players tbody {
+        max-height: unset;
+    }
+
+    #games,
+    #players {
+        height: unset;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 85%;
+    }
+
+    #games thead tr,
+    #games tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    #games table tr td:nth-child(1),
+    #games table tr th:nth-child(1),
+    #games table tr td:nth-child(5),
+    #games table tr th:nth-child(5),
+    #games table tr td:nth-child(7),
+    #games table tr th:nth-child(7) {
+        width: 40%;
+    }
+
+    #games table tr td:nth-child(2),
+    #games table tr th:nth-child(2),
+    #games table tr td:nth-child(3),
+    #games table tr th:nth-child(3),
+    #games table tr td:nth-child(4),
+    #games table tr th:nth-child(4) {
+        width: 17%;
+        padding: 0 0.5rem;
+    }
+
+    #games table tr th:nth-child(5) {
+        visibility: hidden;
+    }
+
+    #games table tr td:nth-child(5)::before {
+        content: 'Skóre: ';
+        display: block;
+        font-size: 0.9rem;
+        line-height: 0;
+    }
+
+    #games table tr td:nth-child(6) {
+        width: 19%;
+    }
+
+    #games table tr th:nth-child(5),
+    #games table tr th:nth-child(6)
+    {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 739px) {
+    #games table tr td:nth-child(1),
+    #games table tr th:nth-child(1),
+    #games table tr td:nth-child(2),
+    #games table tr th:nth-child(2),
+    #games table tr td:nth-child(3),
+    #games table tr th:nth-child(3),
+    #games table tr td:nth-child(4),
+    #games table tr th:nth-child(4),
+    #games table tr td:nth-child(5),
+    #games table tr th:nth-child(5),
+    #games table tr td:nth-child(6),
+    #games table tr th:nth-child(6) {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto 0;
+        width: 49%;
+        padding: 0;
+        min-height: fit-content;
+    }
+
+    #games table tr th:nth-child(5),
+    #games table tr th:nth-child(6)
+    {
+        display: none;
+    }
+
+        #games table tr td:nth-child(7),
+    #games table tr th:nth-child(7) {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .players-header,
+    .games-header {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #players tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #players tbody tr td:nth-child(1),
+    #players thead tr th:nth-child(1) {
+        width: 15%;
+    }
+
+    #players tbody tr td:nth-child(2) {
+        width: 70%;
+    }
+
+    #players thead tr th:nth-child(2) {
+        width: 60%;
+    }
+
+    #players table tr td:nth-child(4),
+    #players table tr th:nth-child(4) {
+        display: inline-flex;
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto;
+        height: 2rem;
+    }
+}
+
+@media only screen and (min-height: 800px) and (max-width: 1024px) {
+    .ui-tabs-panel {
+        height: auto;
+    }
+
+    #players tbody,
+    #games tbody {
+        max-height: unset;
+    }
+}

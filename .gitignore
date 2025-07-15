@@ -1,0 +1,59 @@
+# ========== SENSITIVE SPRING FILES ==========
+# Zabraň uložení konfiguračních souborů s hesly/API klíči
+src/main/resources/application.properties
+src/main/resources/application.yml
+src/main/resources/application-*.properties
+src/main/resources/application-*.yml
+
+# ========== LOCAL BUILD / OUTPUT ==========
+/target/
+/build/
+
+# ========== MAVEN WRAPPER ==========
+.mvn/wrapper/maven-wrapper.jar
+
+# ========== IDEs ==========
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# STS / Eclipse
+.classpath
+.project
+.settings/
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# ========== LOGS / TEMP ==========
+*.log
+*.tmp
+
+# ========== TEST / BUILD OUTPUTS (nested) ==========
+!**/src/main/**/build/
+!**/src/test/**/build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ========== ENV / KEYS ==========
+.env
+.env.*
+*.key
+*.pem

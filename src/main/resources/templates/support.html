@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Podpora</title>
+    <link rel="stylesheet" th:href="@{/css/default.css}">
+    <link rel="stylesheet" th:href="@{/css/support/style.css}">
+</head>
+<body>
+<div class="menu" th:replace="~{fragments/menu.html:: menu('help')}"></div>
+<div class="main">
+    <div class="header" th:replace="~{fragments/menu.html:: header}">
+
+    </div>
+    <div id="content">
+        <div class="box send-support-message">
+            <h2>Podpora</h2>
+            <form>
+                <div>
+                    <div><label for="subject">Předmět:</label></div>
+                    <div><input type="text" name="subject" id="subject"  oninput="validate()"><span class="error-message" id="e-subject"></span></div>
+                </div>
+                <div>
+                    <div><label for="message">Zpráva:</label></div>
+                    <div><textarea name="message" id="message" oninput="validate()"></textarea><span class="error-message" id="e-message"></span></div>
+                </div>
+
+                <div>
+                        <button type="button" onclick="sendSupportMessage()" id="send-message-button" disabled>Odeslat</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/message.html:: message-box}"></div>
+</body>
+<script th:src="@{/js/const.js}"></script>
+<script th:src="@{/js/util.js}"></script>
+<script th:src="@{/js/module/modal.js}"></script>
+<script th:src="@{/js/module/message.js}"></script>
+<script th:src="@{/js/api/support.js}"></script>
+
+<script th:src="@{/js/support/script.js}"></script>
+</html>

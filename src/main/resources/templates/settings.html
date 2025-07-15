@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nastavení</title>
+    <link rel="stylesheet" th:href="@{/css/default.css}">
+    <link rel="stylesheet" th:href="@{/css/settings/style.css}">
+</head>
+<body>
+<div class="menu" th:replace="~{fragments/menu.html:: menu('settings')}"></div>
+<div class="main">
+    <div class="header" th:replace="~{fragments/menu.html:: header}">
+
+    </div>
+    <div id="content">
+        <div class="box settings-form">
+            <h2>Změna hesla</h2>
+            <form>
+                <div>
+                    <div><label for="old-password">Původní heslo:</label></div>
+                    <div><input type="password" name="old-password" id="old-password"><span class="error-message" id="e-old-password"></span></div>
+                </div>
+                <div>
+                    <div><label for="new-password">Nové heslo:</label></div>
+                    <div><input type="password" name="new-password" id="new-password" onfocusout="validate()" onkeyup="validate()"><span class="error-message" id="e-new-password"></span></div>
+                </div>
+                <div>
+                    <div><label for="new-password-repeat">Nové heslo znovu:</label></div>
+                    <div><input type="password" name="" id="new-password-repeat" onfocusout="validate()" onkeyup="validate()"><span class="error-message" id="e-new-password-repeat"></span></div>
+                </div>
+                <div>
+                        <button type="button" onclick="changePassword()" id="change-pass-button" disabled>Změnit heslo</button>
+                </div>
+            </form>
+        </div>
+        <div class="box settings-form">
+            <h2>Výchozí nastavení</h2>
+            <form>
+                <div>
+                    <div><label for="defaultPeriodLength">Délka herní části:</label></div>
+                    <div><input type="number" name="defaultPeriodLength" id="defaultPeriodLength" oninput="validateSettings()"><span class="error-message" id="e-defaultPeriodLength"></span></div>
+                </div>
+                <div>
+                    <div><label for="defaultPeriods">Počet herních částí:</label></div>
+                    <div><input type="number" name="defaultPeriods" id="defaultPeriods" oninput="validateSettings()"><span class="error-message" id="e-defaultPeriods"></span></div>
+                </div>
+                <div>
+                    <button type="button" onclick="changeSettings()" id="change-settings-button" disabled>Uložit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/message.html:: message-box}"></div>
+</body>
+<script th:src="@{/js/const.js}"></script>
+<script th:src="@{/js/util.js}"></script>
+<script th:src="@{/js/module/modal.js}"></script>
+<script th:src="@{/js/module/message.js}"></script>
+<script th:src="@{/js/settings/script.js}"></script>
+<script th:src="@{/js/api/user.js}"></script>
+</html>
