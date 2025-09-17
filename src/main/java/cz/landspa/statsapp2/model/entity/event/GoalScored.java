@@ -1,7 +1,6 @@
 package cz.landspa.statsapp2.model.entity.event;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import cz.landspa.statsapp2.model.entity.Roster;
 import jakarta.persistence.*;
@@ -24,7 +23,7 @@ import java.util.List;
 public class GoalScored extends Event{
 
         @ManyToOne
-        Roster scorer;
+        private Roster scorer;
 
         @ManyToMany
         @JoinTable(
@@ -32,7 +31,7 @@ public class GoalScored extends Event{
                 joinColumns = @JoinColumn(name = "goal_id"),
                 inverseJoinColumns = @JoinColumn(name = "roster_id")
         )
-        List<Roster> assists;
+        private List<Roster> assists;
 
 
         @ManyToMany
@@ -41,12 +40,12 @@ public class GoalScored extends Event{
                 joinColumns = @JoinColumn(name = "goal_id"),
                 inverseJoinColumns = @JoinColumn(name = "roster_id")
         )
-        List<Roster> onIce;
+        private List<Roster> onIce;
 
         @NotNull(message = "Situace musí být vyplněna")
-        String situation;
+        private String situation;
 
-        boolean majorPenalty;
+        private boolean majorPenalty;
 
 
         @JsonProperty("onIce")

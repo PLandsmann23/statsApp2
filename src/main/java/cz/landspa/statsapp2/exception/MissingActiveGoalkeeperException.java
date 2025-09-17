@@ -1,6 +1,5 @@
 package cz.landspa.statsapp2.exception;
 
-import cz.landspa.statsapp2.model.DTO.roster.RosterConflictDTO;
 import cz.landspa.statsapp2.model.entity.Roster;
 import lombok.Getter;
 

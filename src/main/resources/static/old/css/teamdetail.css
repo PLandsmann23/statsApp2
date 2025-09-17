@@ -245,7 +245,7 @@ button:active{
         content: 'Skóre:  ';
         display: block;
         font-size: 0.9rem;
-        line-height: 0rem;
+        line-height: 0;
     }
 
     #games table tr td:nth-child(6) {

@@ -1,7 +1,5 @@
 package cz.landspa.statsapp2.service.impl;
 
-import cz.landspa.statsapp2.exception.ApiExceptionHandler;
-import cz.landspa.statsapp2.exception.GlobalExceptionHandler;
 import cz.landspa.statsapp2.exception.RosterConflictException;
 import cz.landspa.statsapp2.model.DTO.game.GameRosterDTO;
 import cz.landspa.statsapp2.model.DTO.roster.RosterConflictDTO;
@@ -13,12 +11,9 @@ import cz.landspa.statsapp2.repository.PlayerRepository;
 import cz.landspa.statsapp2.repository.RosterRepository;
 import cz.landspa.statsapp2.service.RosterService;
 import jakarta.transaction.Transactional;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service

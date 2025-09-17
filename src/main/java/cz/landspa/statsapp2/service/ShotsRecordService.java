@@ -1,8 +1,6 @@
 package cz.landspa.statsapp2.service;
 
-import cz.landspa.statsapp2.model.DTO.savesRecord.SavesPeriodDTO;
 import cz.landspa.statsapp2.model.DTO.shotsRecored.ShotsPeriodDTO;
-import cz.landspa.statsapp2.model.entity.stats.SavesRecord;
 import cz.landspa.statsapp2.model.entity.stats.ShotsRecord;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,6 @@
 package cz.landspa.statsapp2.repository;
 
 import cz.landspa.statsapp2.model.entity.stats.SavesRecord;
-import cz.landspa.statsapp2.model.entity.stats.ShotsRecord;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

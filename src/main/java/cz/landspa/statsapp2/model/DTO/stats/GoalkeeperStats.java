@@ -1,13 +1,8 @@
 package cz.landspa.statsapp2.model.DTO.stats;
 
 import cz.landspa.statsapp2.model.entity.Player;
-import cz.landspa.statsapp2.model.entity.Roster;
-import cz.landspa.statsapp2.model.entity.stats.SavesRecord;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Data

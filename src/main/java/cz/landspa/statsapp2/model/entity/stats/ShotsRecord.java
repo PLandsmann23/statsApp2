@@ -18,13 +18,13 @@ public class ShotsRecord {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @ManyToOne
     @JsonIdentityReference(alwaysAsId = true)
-    Game game;
+    private Game game;
 
-    Integer period;
+    private Integer period;
 
-    Long shots =0L;
+    private Long shots =0L;
 }

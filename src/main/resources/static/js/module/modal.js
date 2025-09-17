@@ -1,8 +1,8 @@
 
 function openModal(modalName){
     let modal = document.getElementById(modalName);
-    let currentPeriod = Number(loadFromSessionStorage("game").currentPeriod);
-    let periods = Number(loadFromSessionStorage("game").periods);
+    let currentPeriod = Number(loadFromSessionStorage("game")?.currentPeriod);
+    let periods = Number(loadFromSessionStorage("game")?.periods);
     let rosterModals = ["scored-goal", "conceded-goal", "penalty", "scored-goal-edit", "conceded-goal-edit", "penalty-edit"];
     let needRoster = false;
 

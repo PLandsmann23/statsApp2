@@ -12,7 +12,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity@JsonTypeInfo(
+@Entity
+@JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
         property = "type"
@@ -33,14 +34,14 @@ public abstract class Event {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @NotNull(message = "Délka trestu musí být vyplněna")
-    Integer time;
+    private Integer time;
 
     @ManyToOne
     @JsonIgnore
-    Game game;
+    private Game game;
 
     public String getType(){
         return this.getClass().getSimpleName();

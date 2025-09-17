@@ -115,9 +115,9 @@ button:disabled{
     overflow: hidden;
     white-space: normal;
     word-wrap: break-word;
-    -webkit-box-shadow: 44px 4px 14px 0px rgba(0,0,0,0.20);
-    -moz-box-shadow: 4px 4px 14px 0px rgba(0,0,0,0.20);
-    box-shadow: 4px 4px 14px 0px rgba(0,0,0,0.20);
+    -webkit-box-shadow: 44px 4px 14px 0 rgba(0,0,0,0.20);
+    -moz-box-shadow: 4px 4px 14px 0 rgba(0,0,0,0.20);
+    box-shadow: 4px 4px 14px 0 rgba(0,0,0,0.20);
     transition: all 0.3s ease;
     opacity: 0;
 }

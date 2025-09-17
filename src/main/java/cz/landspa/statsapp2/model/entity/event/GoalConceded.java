@@ -24,13 +24,13 @@ public class GoalConceded extends Event{
             joinColumns = @JoinColumn(name = "goal_conceded_id"),
             inverseJoinColumns = @JoinColumn(name = "roster_id")
     )
-    List<Roster> onIce;
+    private List<Roster> onIce;
 
     @ManyToOne
-    Roster inGoal;
+    private Roster inGoal;
 
     @NotNull(message = "Situace musí být vyplněna")
-    String situation;
+    private String situation;
 
-    boolean majorPenalty;
+    private boolean majorPenalty;
 }

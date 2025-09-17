@@ -17,14 +17,14 @@ public class VerificationToken {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @OneToOne
     @JoinColumn(nullable = false)
-    User user;
+    private User user;
 
 
-    String token;
+    private String token;
 
     public VerificationToken(User user){
         this.user = user;

@@ -1,7 +1,6 @@
 package cz.landspa.statsapp2.model.DTO.stats;
 
 import cz.landspa.statsapp2.model.entity.Player;
-import cz.landspa.statsapp2.model.entity.Roster;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -19,20 +19,20 @@ public class Roster {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @ManyToOne
     @JsonIdentityReference(alwaysAsId = true)
-    Game game;
+    private Game game;
 
     @ManyToOne
-    Player player;
+    private Player player;
 
-    Integer gameNumber;
+    private Integer gameNumber;
 
     @Min(value = 0)
     @Max(value = 5)
-    Integer line = 0;
+    private Integer line = 0;
 
-    boolean activeGk;
+    private boolean activeGk;
 }

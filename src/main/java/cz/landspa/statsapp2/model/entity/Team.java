@@ -1,7 +1,6 @@
 package cz.landspa.statsapp2.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import cz.landspa.statsapp2.model.entity.user.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -19,16 +18,15 @@ public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @NotBlank(message = "Název musí být vyplněn")
-    String name;
-
+    private String name;
 
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIdentityReference(alwaysAsId = true)
-    User owner;
+    private User owner;
 
 
 }

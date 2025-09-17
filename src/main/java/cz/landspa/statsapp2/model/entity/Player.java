@@ -19,24 +19,24 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @NotBlank(message = "Jméno musí být vyplněno")
-    String name;
+    private String name;
 
     @NotBlank(message = "Příjmení musí být vyplněno")
-    String surname;
+    private String surname;
 
 
     @Min(value = 1, message = "Číslo musí být větší než 0")
     @Max(value = 99, message = "Číslo musí být menší než 100")
-    Integer number;
+    private Integer number;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIdentityReference(alwaysAsId = true)
-    Team team;
+    private Team team;
 
     @ManyToOne
-    Position position;
+    private Position position;
 
 }

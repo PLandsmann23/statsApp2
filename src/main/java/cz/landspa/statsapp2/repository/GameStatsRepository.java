@@ -37,7 +37,7 @@ public class GameStatsRepository {
     }
 
     public List<GoalkeeperGameStats> getGoalkeeperStats(Long gameId) {
-        // Vrátí soupisku s aktivními GK v zápase
+
         List<Roster> gkList = em.createQuery("""
             SELECT r FROM Roster r
             WHERE r.game.id = :gameId AND r.player.position.code = 'GK'
@@ -48,7 +48,6 @@ public class GameStatsRepository {
         List<GoalkeeperGameStats> result = new ArrayList<>();
 
         for (Roster gk : gkList) {
-            // Najdi SavesRecord pro každou třetinu
             List<SavesRecord> saves = em.createQuery("""
                 SELECT s FROM SavesRecord s
                 WHERE s.game.id = :gameId AND s.goalkeeper.id = :goalieId
@@ -57,7 +56,6 @@ public class GameStatsRepository {
                     .setParameter("goalieId", gk.getId())
                     .getResultList();
 
-            // Spočítej inkasované góly
             Long goalsConceded = em.createQuery("""
                 SELECT COUNT(gc) FROM GoalConceded gc
                 WHERE gc.game.id = :gameId AND gc.inGoal.id = :goalieId

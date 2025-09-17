@@ -22,33 +22,33 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     // @Column(unique = true)
     @NotBlank(message = "Uživatelské jméno musí být vyplněno")
-    String username;
+    private String username;
 
     // @Column(unique = true)
     @NotBlank(message = "Email musí být vyplněn")
-    String email;
+    private String email;
 
 
 
     // @JsonIgnore
     @NotBlank(message = "Heslo musí být vyplněno")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    String password;
+    private String password;
 
 
     @Column(columnDefinition = "ENUM('USER','ADMIN')")
     @Enumerated(EnumType.STRING)
-    Role role = Role.USER;
+    private Role role = Role.USER;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    UserSetting userSetting;
+    private UserSetting userSetting;
 
     @Column(nullable = false)
-    boolean enabled = false;
+    private boolean enabled = false;
 
 
 

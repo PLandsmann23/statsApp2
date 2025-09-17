@@ -12,7 +12,6 @@ import cz.landspa.statsapp2.service.PlayerService;
 import cz.landspa.statsapp2.service.TeamService;
 import cz.landspa.statsapp2.util.SecurityUtil;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

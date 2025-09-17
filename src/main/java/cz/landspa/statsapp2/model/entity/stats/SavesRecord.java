@@ -18,16 +18,16 @@ import lombok.Setter;
 public class SavesRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @ManyToOne
     @JsonIdentityReference(alwaysAsId = true)
-    Game game;
+    private Game game;
 
     @ManyToOne
-    Roster goalkeeper;
+    private Roster goalkeeper;
 
-    Integer period;
+    private Integer period;
 
-    Long saves = 0L;
+    private Long saves = 0L;
 }

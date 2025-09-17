@@ -1,6 +1,5 @@
 package cz.landspa.statsapp2.repository;
 
-import cz.landspa.statsapp2.model.entity.Position;
 import cz.landspa.statsapp2.model.entity.Roster;
 import org.springframework.data.jpa.repository.JpaRepository;
 

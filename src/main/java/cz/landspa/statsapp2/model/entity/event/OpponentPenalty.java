@@ -17,8 +17,8 @@ import lombok.Setter;
 public class OpponentPenalty extends Event{
 
     @NotNull(message = "Délka trestu musí být vyplněna")
-    Integer minutes;
+    private Integer minutes;
 
-    Boolean coincidental = false;
+    private Boolean coincidental = false;
 
 }

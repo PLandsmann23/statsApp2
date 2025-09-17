@@ -20,12 +20,12 @@ import lombok.Setter;
 public class Penalty extends Event{
 
     @ManyToOne
-    Roster player;
+    private Roster player;
 
     @NotNull(message = "Délka trestu musí být vyplněna")
-    Integer minutes;
+    private Integer minutes;
 
-    String reason;
+    private String reason;
 
-    Boolean coincidental = false;
+    private Boolean coincidental = false;
 }

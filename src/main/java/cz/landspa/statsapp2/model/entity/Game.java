@@ -21,27 +21,27 @@ public class Game {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @ManyToOne
-    Team team;
+    private Team team;
 
     @NotBlank(message = "Soupeř musí být vyplněn")
-    String opponent;
+    private String opponent;
 
-    LocalDate date;
+    private LocalDate date;
 
-    LocalTime time;
+    private LocalTime time;
 
-    String venue;
+    private String venue;
 
     @Min(value = 1, message = "Počet třetin musí být alespoň 1")
-    Integer periods = 3;
+    private Integer periods = 3;
 
     @Min(value = 1, message = "Délka třetiny musí být alespoň 1 minuta")
-    Integer periodLength = 20;
+    private Integer periodLength = 20;
 
     @Min(value = 1)
-    Integer currentPeriod = 1;
+    private Integer currentPeriod = 1;
 
 }
