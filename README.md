@@ -2,7 +2,7 @@
 
 StatsApp2 je webová aplikace pro správu a sledování statistik sportovních událostí vyvinutá pomocí Spring Boot a Jakarta EE.
 
-## 🚀 Funkce
+## Funkce
 
 - Správa hráčů a týmů
 - Sledování herních událostí a statistik
@@ -10,7 +10,7 @@ StatsApp2 je webová aplikace pro správu a sledování statistik sportovních u
 - Detailní statistiky zápasů
 - REST API pro integraci
 
-## 🛠️ Technologie
+## Technologie
 
 - Java 22
 - Spring Boot
@@ -20,13 +20,13 @@ StatsApp2 je webová aplikace pro správu a sledování statistik sportovních u
 - Lombok
 - Maven
 
-## 📋 Požadavky
+## Požadavky
 
 - Java JDK 22 nebo novější
 - Maven 3.x
 - MySQL/MariaDB databáze
 
-## 🔧 Instalace
+## Instalace
 
 1. Naklonujte repozitář:
 
@@ -46,25 +46,11 @@ StatsApp2 je webová aplikace pro správu a sledování statistik sportovních u
 
 Aplikace bude dostupná na `http://localhost:8080`
 
-## 🔌 API Endpointy
 
-Aplikace poskytuje následující REST API endpointy:
-
-- `/api/players` - Správa hráčů
-- `/api/events` - Správa událostí
-- `/api/games` - Správa zápasů
-- `/api/stats` - Přístup ke statistikám
-- `/api/rosters` - Správa soupisek
-- `/api/game-stats` - Statistiky zápasů
-
-## 👥 Přispívání
-
-Příspěvky jsou vítány! Pro větší změny prosím nejdříve otevřete issue k diskuzi navrhovaných změn.
-
-## 📝 Licence
+##  Licence
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## 🤝 Kontakt
+##  Kontakt
 
 Pokud máte jakékoliv dotazy nebo návrhy na vylepšení, neváhejte otevřít issue nebo pull request.
